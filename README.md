@@ -4,7 +4,7 @@ Welcome to the Validate Form project! 🚀💻 This project offers an elegant an
 
 ## Features
 
-**CPF and CNPJ Validation** Choose between CPF and CNPJ options, displaying an error if the field is empty or invalid.
+**CPF and CNPJ Validation:** Choose between CPF and CNPJ options, displaying an error if the field is empty or invalid.
 
 **Full Name Validation:** Display an error if the field is empty or invalid.
 
