@@ -10,7 +10,7 @@ Welcome to the Validate Form project! 🚀💻 This project offers an elegant an
 
 **Date of Birth Validation:** Display an error if the field is empty or invalid.
 
-**Email Validation** Display an error if the field is empty or invalid.
+**Email Validation:** Display an error if the field is empty or invalid.
 
 **Cell Phone Number Validation:** Display an error if the field is empty or invalid.
 
