@@ -1,0 +1,21 @@
+{
+    "name": "Validate Form",
+    "version": "1.0.0",
+    "description": "",
+    "main": "chargingConditions.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "form",
+        "validate",
+        "cpf",
+        "cnpj",
+        "full name",
+        "date of birth",
+        "email",
+        "cell phone number"
+    ],
+    "author": "Daiene Batagioti",
+    "license": "ISC"
+}
