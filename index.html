@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Validation Form</title>
+    
+    <link href="/css/variables.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/form.png"/>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid d-flex justify-content-between">
+        <p>Daiene Batagioti</p>
+        <button class="navbar-toggler py-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="d-flex flex-column">
+            <span class="toggle-icon mb-2"></span>
+            <span class="toggle-icon mb-2"></span>
+            <span class="toggle-icon"></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarText">
+          <ul class="navbar-nav h-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Sobre nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Fale conosco</a>
+            </li>
+          </ul>
+          <button id="navButton" type="button">Acessar conta</button>
+        </div>
+      </div>
+    </nav>
+    <main class="d-flex align-items-center justify-content-center">
+      <div class="d-flex flex-column align-items-start justify-content-center col-12 col-sm-10 col-md-8 col-lg-8 col-xl-5 col-xxl-5" id="dataForm">
+        <div class="row">
+          <h2 class="fw-bold text-start">Informações Essenciais para o Formulário:</h2>
+        </div>
+        <form class="w-100">
+          <div class="row">
+            <div id="input-radio-form" class="d-flex align-items-center justify-content-start">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  CPF
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  CNPJ
+                </label>
+              </div>
+            </div>
+
+            <div id="inputCPF" class="form-group">
+              <label for="inputCPF">Digite seu CPF <span class="restricted-information p-subtext">(apenas números)</span></label>
+              <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" size="14" maxlength="14" placeholder="000.000.000-00" class="form-control" id="cpfValue" required>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite um CPF válido.</li>
+                <li class="d-none emptyInput error">O campo CPF deve ser preenchido.</li>
+              </ul>
+            </div>
+
+            <div id="inputCNPJ" class="form-group">
+              <label for="inputCNPJ">Digite seu CNPJ <span class="restricted-information p-subtext">(apenas números)</span></label>
+              <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" size="14" maxlength="14" placeholder="00.000.000/0000-00" class="form-control" id="cnpjValue" required>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite um CNPJ válido.</li>
+                <li class="d-none emptyInput error">O campo CNPJ deve ser preenchido.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="inputName">Nome completo</label>
+              <input type="text" placeholder="Insira seu nome completo" class="form-control" id="inputName" required>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite um nome válido.</li>
+                <li class="d-none emptyInput error">O campo nome deve ser preenchido.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="inputData">Data de nascimento</label>
+              <table>
+                <tbody id="inputData">
+                  <tr>
+                    <td>
+                      <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="day" size="2" maxlength="2" placeholder="dd" class="form-control" required>
+                    </td>
+                    <td>
+                      <span>/</span>
+                    </td>
+                    <td>
+                      <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="month" size="2" maxlength="2" placeholder="mm" class="form-control" required>
+                    </td>
+                    <td>
+                      <span>/</span>
+                    </td>
+                    <td>
+                      <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="year" size="4" maxlength="4" placeholder="aaaa" class="form-control" required>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite uma data de nascimento válida.</li>
+                <li class="d-none emptyInput error">O campo data de nascimento deve ser preenchido.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="inputEmail">E-mail</label>
+              <input type="email" placeholder="exemplo@seuemail.com" class="form-control m-0 inputEmail" required>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite um e-mail válido.</li>
+                <li class="d-none emptyInput error">O campo e-mail deve ser preenchido.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="inputCel">Celular</label>
+              <input type="text" size="14" placeholder="(xx) xxxxx-xxxx" maxlength="14" class="form-control" id="inputCel" required>
+              <ul class="listError">
+                <li class="d-none invalidInput error">Digite um número de celular válido.</li>
+                <li class="d-none emptyInput error">O campo número de celular deve ser preenchido.</li>
+              </ul>
+            </div>
+          </div>
+          <button type="submit" class="w-100 principalButton" id="confirmButton">Confirmar</button>
+        </form>
+      </div>
+    </main>
+  </body>
+  <footer class="d-flex align-items-center justify-content-center">&copy; Daiene Batagioti</footer>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/chargingConditions.js"></script>
+</html>
